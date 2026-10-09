@@ -2,7 +2,7 @@
 
 We built Murdoku Lab because detective puzzles are fun—and because they give agents rich worlds with answers we can check.
 
-[Explore Murdoku Lab](https://everywheresafety.github.io/murdoku/) · [Code](https://github.com/EverywhereSafety/murdoku-lab) · [Queries and rollouts](https://huggingface.co/datasets/EverywhereSafety/murdoku-lab) · [Murdoku Detective 4B](https://huggingface.co/EverywhereSafety/murdoku-detective-4b) · [Agent Horizon](https://github.com/EverywhereSafety/agent-horizon)
+[Play a case](https://everywheresafety.github.io/murdoku/play/) · [Explore Murdoku Lab](https://everywheresafety.github.io/murdoku/) · [Code](https://github.com/EverywhereSafety/murdoku-lab) · [Queries and rollouts](https://huggingface.co/datasets/EverywhereSafety/murdoku-lab) · [Murdoku Detective 4B](https://huggingface.co/EverywhereSafety/murdoku-detective-4b) · [Agent Horizon](https://github.com/EverywhereSafety/agent-horizon)
 
 ![The illustrated casebook: a board, clues and a cast](assets/play-preview.png)
 
