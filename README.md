@@ -7,7 +7,7 @@ Research ideas, engineering notes and project stories from
 
 ## Articles
 
-- [How a detective solved the Treasure Hunt in 20 minutes](https://everywheresafety.github.io/blog/treasure-hunt/) — Coming soon.
+- [The first correct answer to the Treasure Hunt](https://everywheresafety.github.io/blog/treasure-hunt/) — Coming soon.
 
 - [Puzzles for people, verifiable worlds for agents](https://everywheresafety.github.io/blog/murdoku-as-vhd/)
   — Murdoku Lab as a puzzle workshop and an instance of VHD:

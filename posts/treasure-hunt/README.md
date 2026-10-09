@@ -1,6 +1,6 @@
-# How a detective solved the Treasure Hunt in 20 minutes
+# The first correct answer to the Treasure Hunt
 
-Coming soon. A walkthrough of the solving process and deduction rhythm, to be shared after the contest ends.
+Coming soon. Manuel Garand confirmed that our submission was the first correct answer. We will share the solving process and deduction rhythm after the contest ends.
 
 ![Treasure Hunt report coming soon](assets/cover.svg)
 
