@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Puzzles for people, verifiable worlds for agents · Everywhere Safety</title><meta name="description" content="We built Murdoku Lab because detective puzzles are fun—and because they give agents rich worlds with answers we can check.">
+<link rel="canonical" href="https://everywheresafety.github.io/blog/murdoku-as-vhd/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Everywhere Safety">
+<meta property="og:title" content="Puzzles for people, verifiable worlds for agents">
+<meta property="og:description" content="We built Murdoku Lab because detective puzzles are fun—and because they give agents rich worlds with answers we can check.">
+<meta property="og:url" content="https://everywheresafety.github.io/blog/murdoku-as-vhd/">
+<meta property="og:image" content="https://everywheresafety.github.io/blog/murdoku-as-vhd/assets/play-preview.png">
+<meta property="og:image:alt" content="Puzzles for people, verifiable worlds for agents">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Puzzles for people, verifiable worlds for agents">
+<meta name="twitter:description" content="We built Murdoku Lab because detective puzzles are fun—and because they give agents rich worlds with answers we can check.">
+<meta name="twitter:image" content="https://everywheresafety.github.io/blog/murdoku-as-vhd/assets/play-preview.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Puzzles for people, verifiable worlds for agents", "description": "We built Murdoku Lab because detective puzzles are fun\u2014and because they give agents rich worlds with answers we can check.", "url": "https://everywheresafety.github.io/blog/murdoku-as-vhd/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://everywheresafety.github.io/blog/murdoku-as-vhd/"}, "image": ["https://everywheresafety.github.io/blog/murdoku-as-vhd/assets/play-preview.png"], "author": {"@type": "Organization", "name": "Everywhere Safety", "url": "https://everywheresafety.github.io/"}, "publisher": {"@type": "Organization", "name": "Everywhere Safety", "url": "https://everywheresafety.github.io/"}, "inLanguage": "en"}</script>
+<link rel="icon" href="https://avatars.githubusercontent.com/u/334873385?v=4"><link rel="stylesheet" href="https://everywheresafety.github.io/assets/site.css"><style>.project-page{max-width:1100px;padding:55px 0 80px}.project-page h1{font-size:clamp(3rem,7vw,5.5rem);max-width:900px}.project-page h2{font-size:2.2rem;margin:48px 0 15px}.project-page h3{font-size:1.5rem}.project-page p{max-width:850px;font-size:1.08rem;color:var(--soft)}.project-page figure{margin:30px 0}.project-page img{width:100%;border:1px solid var(--line);border-radius:18px}.project-page figcaption{font-size:.85rem;color:var(--muted);margin-top:10px}.project-page .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}.project-page .card{padding:25px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.project-page .card p{font-size:1rem}.project-page a{text-underline-offset:4px}.project-page pre{white-space:pre-wrap;background:var(--surface);padding:20px;border-radius:12px;overflow-wrap:anywhere}.project-page .pill{display:inline-block;padding:5px 12px;border-radius:30px;background:var(--accent-light);font-size:.8rem;margin:15px 5px 0 0}@media(max-width:650px){.project-page .cards{grid-template-columns:1fr}.site-header{flex-wrap:wrap;padding:12px 0;gap:10px}nav{flex-wrap:wrap}}</style></head><body><header class="site-header"><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a><nav aria-label="Primary"><a href="https://everywheresafety.github.io/murdoku/">Murdoku Lab</a><a href="https://everywheresafety.github.io/blog/">Blog</a><a href="https://github.com/EverywhereSafety">GitHub ↗</a></nav></header><main class="project-page"><h1 id="puzzles-for-people-verifiable-worlds-for-agents">Puzzles for people, verifiable worlds for agents</h1>
+<p>We built Murdoku Lab because detective puzzles are fun—and because they give agents rich worlds with answers we can check.</p>
+<p><a href="https://everywheresafety.github.io/murdoku/">Explore Murdoku Lab</a> · <a href="https://github.com/EverywhereSafety/murdoku-lab">Code</a> · <a href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries and rollouts</a> · <a href="https://huggingface.co/EverywhereSafety/murdoku-detective-4b">Murdoku Detective 4B</a> · <a href="https://github.com/EverywhereSafety/agent-horizon">Agent Horizon</a></p>
+<p><img alt="The illustrated casebook: a board, clues and a cast" src="assets/play-preview.png" /></p>
+<h2 id="give-people-more-cases-to-crack">Give people more cases to crack</h2>
+<p>A board, a cast and a few statements are enough to start a mystery. Reconstruct where everyone stood, and find who was alone with the victim. <a href="https://murdoku.com/">Murdoku, by Manuel Garand</a>, makes spatial deduction feel like detective work.</p>
+<p>Murdoku Lab brings a setter, solver and playable frontend together. Players can create new cases and inspect how their clues lead to a solution. Researchers can use the same cases as interactive tasks.</p>
+<h2 id="diversity-around-a-solved-problem">Diversity around a solved problem</h2>
+<p><a href="https://arxiv.org/abs/2609.27321">VHD-Play</a> offers a useful construction: begin with a solved formal mechanism, then use an LLM setter to turn it into varied experiences. Murdoku Lab is one concrete instance.</p>
+<p>The formal generator builds the board and constraints; solvers establish the unique solution. The semantic setter adds a setting, cast and wording. The environment retains the solution as a <strong>gold reward reference</strong>.</p>
+<p><img alt="Actual generated visual queries: climbing gym, robotics laboratory and music school" src="assets/semantic-diversity.png" /></p>
+<p>Settings, characters, rooms and objects broaden the experience around verified structures. Board size and constraint structure vary the deduction problem; colorful visual assets make the settings visible.</p>
+<h2 id="a-good-puzzle-has-a-rhythm">A good puzzle has a rhythm</h2>
+<p>A promising clue gives you a way in. One discovery unlocks another, an awkward gap invites a different approach, and the final placement reveals what happened. Unique solutions give us a sound puzzle; these moments give us something to design for.</p>
+<p>We measure that progression through deduction traces: steps to the first determined position, the longest gap without a new determination, and consecutive placement steps. The curves below show how quickly the cast becomes located as each trace unfolds.</p>
+<p><img alt="Opening discoveries, discovery gaps and progress through 96 generated puzzles" src="assets/puzzle-rhythm.png" /></p>
+<p>We sampled <strong>96 generated training cases</strong>: 12 in each combination of board size 6–9 and medium/hard difficulty. Text and visual views count as one formal case. Values below are medians from the canonical deduction solver; the figure shows medians and the middle 50% of cases.</p>
+<table>
+<thead>
+<tr>
+<th>Board</th>
+<th>Difficulty</th>
+<th style="text-align: right;">First discovery</th>
+<th style="text-align: right;">Longest discovery gap</th>
+<th style="text-align: right;">Longest placement chain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6×6</td>
+<td>Medium</td>
+<td style="text-align: right;">4.5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>6×6</td>
+<td>Hard</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>7×7</td>
+<td>Medium</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>7×7</td>
+<td>Hard</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>8×8</td>
+<td>Medium</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>8×8</td>
+<td>Hard</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>9×9</td>
+<td>Medium</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5.5</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>9×9</td>
+<td>Hard</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
+<p>The 9×9 sample starts quickly, then has longer interruptions. Opening ease and sustained progress describe different parts of the challenge. These solver measurements let us compare puzzle structures and tune their rhythm; player feedback can tell us which rhythms are enjoyable.</p>
+<p><a href="https://github.com/EverywhereSafety/murdoku-lab/blob/main/docs/reference/reasoning-profiles.md#generated-query-sample">Measurement definitions and sampling method</a> · <a href="assets/puzzle-rhythm.json">Aggregate measurements</a></p>
+<h2 id="agents-at-the-puzzle-board">Agents at the puzzle board</h2>
+<p>An agent can inspect the board, reason about clues, write and execute code, place characters and revise its deductions. The environment checks the final arrangement and verdict against the established solution.</p>
+<p>Text and visual observations expose the same underlying case. This gives us a common task for studying tool use, reasoning and perception. Queries initialize fresh episodes for RL. Query + model rollout records preserve successful interactions for SFT and analysis.</p>
+<p><img alt="A text query and its paired visual observation" src="assets/query-views.png" /></p>
+<p>All variants of a puzzle belong to the same data split. Generated cases provide training and held-out validation; official puzzles provide a separate transfer test.</p>
+<h2 id="start-with-a-query-or-a-solver">Start with a query or a solver</h2>
+<p>The <a href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">dataset</a> packages <strong>1,410 text and visual queries</strong> in one <code>query_rollouts.jsonl</code>, with image assets alongside it. The training split contains 698 text and 500 visual queries with successful recorded interactions; validation contains 106 cases in both views. Read <code>query</code> to initialize an RL episode, or use <code>rollout</code> for SFT and interaction analysis.</p>
+<p><a href="https://huggingface.co/EverywhereSafety/murdoku-detective-4b">Murdoku Detective 4B</a> is a trained solver example. Serve it with its tokenizer, processor and chat template, execute its calls through the puzzle environment, and inspect how it reaches a submission.</p>
+<h2 id="separate-the-game-from-the-trainer">Separate the game from the trainer</h2>
+<p><a href="https://github.com/EverywhereSafety/murdoku-lab">Murdoku Lab</a> owns the puzzles, presentation, tools and grader. <a href="https://github.com/EverywhereSafety/agent-horizon">Agent Horizon</a> owns long-horizon training on veRL: persistent state, context management, asynchronous rollout and recovery.</p></main><footer><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a></footer></body></html>
