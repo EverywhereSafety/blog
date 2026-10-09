@@ -1,4 +1,4 @@
-# The first correct answer to the Treasure Hunt
+# How a detective solved the Treasure Hunt in about 20 minutes
 
 Coming soon. Manuel Garand confirmed that our submission was the first correct answer. We will share the solving process and deduction rhythm after the contest ends.
 
