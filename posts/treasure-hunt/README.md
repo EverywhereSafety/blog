@@ -1,4 +1,6 @@
-# How we solved the Treasure Hunt in 20 minutes and built a workshop for endless puzzles
+# How we solved the Treasure Hunt in 20 minutes
+
+<p class="article-subtitle">and built a workshop for endless puzzles</p>
 
 Manuel Garand confirmed that we were the first to submit the correct answer to the official Murdoku Treasure Hunt. Our solve took about 20 minutes.
 

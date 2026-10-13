@@ -21,7 +21,11 @@ def main():
     for source in sorted((ROOT / "posts").glob("*/README.md")):
         text = source.read_text()
         title = text.splitlines()[0].removeprefix("# ")
-        description = next(line for line in text.splitlines()[1:] if line.strip())
+        description = next(
+            line
+            for line in text.splitlines()[1:]
+            if line.strip() and not line.lstrip().startswith(("<", "#", "!["))
+        )
         url = f"{SITE}/blog/{source.parent.name}/"
         cover = re.search(r"!\[[^\]]*\]\(([^)]+)\)", text)
         image = (

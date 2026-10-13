@@ -7,7 +7,7 @@ Research ideas, engineering notes and project stories from
 
 ## Articles
 
-- [How we solved the Treasure Hunt in 20 minutes and built a workshop for endless puzzles](https://everywheresafety.github.io/blog/treasure-hunt/)
+- [How we solved the Treasure Hunt in 20 minutes](https://everywheresafety.github.io/blog/treasure-hunt/)
   — A contest case opens a look at diverse puzzle generation, verified answers
   and deduction rhythm in Murdoku Lab.
 
