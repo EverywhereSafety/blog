@@ -35,3 +35,7 @@ Keep medians and quartiles tied to the data files. Placement-chain data supplies
 medians only. Plot labels must state the units, trace normalization and axis
 scales. Section numbers and numbered figure/table captions are added by the
 builder; scene artwork and game screenshots remain image assets.
+
+The article template includes the shared production Analytics loader at
+`https://everywheresafety.github.io/assets/analytics.js`. Retain that tag when
+changing the template; it keeps rebuilt articles in the main site's GA4 stream.
