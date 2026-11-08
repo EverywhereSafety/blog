@@ -8,6 +8,7 @@ import re
 import shutil
 
 import markdown
+from native_figures import native_content
 
 ROOT = Path(__file__).resolve().parent
 SITE = "https://everywheresafety.github.io"
@@ -69,6 +70,19 @@ def main():
                 f'<span class="toc-number" aria-hidden="true">{number}</span><span>{label}</span></a></li>'
             )
         toc = '<ol class="toc-list">' + "".join(toc_entries) + "</ol>"
+        # Number only the article's actual headings; chart panel labels are separate.
+        heading_number = [0, 0]
+        def number_heading(match):
+            level, section_id, label = match.groups()
+            if level == "2":
+                heading_number[0] += 1
+                heading_number[1] = 0
+                number = str(heading_number[0])
+            else:
+                heading_number[1] += 1
+                number = f"{heading_number[0]}.{heading_number[1]}"
+            return f'<h{level} id="{section_id}"><span class="section-number" aria-hidden="true">{number}</span>{label}</h{level}>'
+        content = re.sub(r'<h([23]) id="([^"]+)">(.*?)</h\1>', number_heading, content)
         # The title and subtitle belong to the article header, outside the prose.
         content = re.sub(r"^<h1\b[^>]*>.*?</h1>\s*", "", content, count=1)
         subtitle_match = re.match(r'<p class="article-subtitle">.*?</p>', content)
@@ -77,21 +91,35 @@ def main():
             content = content[subtitle_match.end():].lstrip()
         reading_minutes = max(1, (len(re.sub(r"<[^>]+>", " ", content).split()) + 219) // 220)
 
+        figure_number = 0
         def render_figure(match):
+            nonlocal figure_number
+            figure_number += 1
             image_html = match[1]
             alt = re.search(r'alt="([^"]*)"', image_html)
-            caption = f"<figcaption>{alt[1]}</figcaption>" if alt and alt[1] else ""
-            return f'<figure class="article-figure">{image_html}{caption}</figure>'
+            image_src = re.search(r'src="([^"]*)"', image_html)
+            native = native_content(image_src[1], source.parent / "assets") if image_src else None
+            captions = {
+                "puzzle-rhythm.png": "96 cases, 12 per board-size/difficulty group. Dots and curves show medians; whiskers and shaded bands show the middle 50%. Placement-chain points show medians only. Progress is normalized within each solver trace.",
+                "contest-rhythm.png": "Aggregate candidate counts and exact placements from the recorded deduction trace. Both axes are linear; this is a solver procedure, not elapsed time. Hover or focus to inspect events. <a href='assets/contest-rhythm.json'>Aggregate trace data</a>.",
+            }
+            label = captions.get(Path(image_src[1]).name, alt[1] if alt else "")
+            caption = f'<figcaption><span class="caption-label">Figure {figure_number}.</span> {label}</figcaption>'
+            native_class = " native-figure" if native else ""
+            return f'<figure id="figure-{figure_number}" class="article-figure{native_class}">{native or image_html}{caption}</figure>'
 
         content = re.sub(
             r'<p>((?:<a\b[^>]*>)?<img\b[^>]+/>(?:</a>)?)</p>',
             render_figure, content,
         )
-        content = re.sub(
-            r"(<table>.*?</table>)",
-            r'<div class="article-table" tabindex="0" role="region" aria-label="Data table">\1</div>',
-            content, flags=re.S,
-        )
+        table_number = 0
+        def render_table(match):
+            nonlocal table_number
+            table_number += 1
+            caption = f'<caption><span class="caption-label">Table {table_number}.</span> Canonical solver medians for 96 generated cases, with 12 cases per board-size/difficulty group.</caption>'
+            table = match[1].replace("<table>", "<table>" + caption, 1)
+            return f'<div class="article-table" tabindex="0" role="region" aria-label="Table {table_number}">{table}</div>'
+        content = re.sub(r"(<table>.*?</table>)", render_table, content, flags=re.S)
         rendered = (
             template.replace("{{TITLE}}", html.escape(title))
             .replace("{{DESCRIPTION}}", html.escape(description, quote=True))

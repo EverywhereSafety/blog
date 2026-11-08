@@ -1,0 +1,436 @@
+{
+  "source": "Aggregate counts from the recorded bounded-contradiction trace used for the original contest-rhythm.png. Character placements and treasure coordinates are omitted.",
+  "source_sha256": "60f12a37c2606a3b7f07a7a104bcbcc524ee924cae126c21997078d32c116513",
+  "events": [
+    {
+      "step": 0,
+      "people_located": 0,
+      "candidate_cells": 1782
+    },
+    {
+      "step": 1,
+      "people_located": 0,
+      "candidate_cells": 1761
+    },
+    {
+      "step": 2,
+      "people_located": 0,
+      "candidate_cells": 1719
+    },
+    {
+      "step": 3,
+      "people_located": 0,
+      "candidate_cells": 1716
+    },
+    {
+      "step": 4,
+      "people_located": 0,
+      "candidate_cells": 1573
+    },
+    {
+      "step": 5,
+      "people_located": 0,
+      "candidate_cells": 1534
+    },
+    {
+      "step": 6,
+      "people_located": 0,
+      "candidate_cells": 1530
+    },
+    {
+      "step": 7,
+      "people_located": 0,
+      "candidate_cells": 1456
+    },
+    {
+      "step": 8,
+      "people_located": 0,
+      "candidate_cells": 1035
+    },
+    {
+      "step": 9,
+      "people_located": 0,
+      "candidate_cells": 1034
+    },
+    {
+      "step": 10,
+      "people_located": 0,
+      "candidate_cells": 1033
+    },
+    {
+      "step": 11,
+      "people_located": 0,
+      "candidate_cells": 1032
+    },
+    {
+      "step": 12,
+      "people_located": 0,
+      "candidate_cells": 1031
+    },
+    {
+      "step": 13,
+      "people_located": 1,
+      "candidate_cells": 1030
+    },
+    {
+      "step": 14,
+      "people_located": 1,
+      "candidate_cells": 979
+    },
+    {
+      "step": 15,
+      "people_located": 1,
+      "candidate_cells": 931
+    },
+    {
+      "step": 16,
+      "people_located": 2,
+      "candidate_cells": 930
+    },
+    {
+      "step": 17,
+      "people_located": 2,
+      "candidate_cells": 880
+    },
+    {
+      "step": 18,
+      "people_located": 2,
+      "candidate_cells": 879
+    },
+    {
+      "step": 19,
+      "people_located": 3,
+      "candidate_cells": 878
+    },
+    {
+      "step": 20,
+      "people_located": 4,
+      "candidate_cells": 824
+    },
+    {
+      "step": 21,
+      "people_located": 4,
+      "candidate_cells": 775
+    },
+    {
+      "step": 22,
+      "people_located": 4,
+      "candidate_cells": 735
+    },
+    {
+      "step": 23,
+      "people_located": 4,
+      "candidate_cells": 695
+    },
+    {
+      "step": 24,
+      "people_located": 4,
+      "candidate_cells": 615
+    },
+    {
+      "step": 25,
+      "people_located": 4,
+      "candidate_cells": 589
+    },
+    {
+      "step": 26,
+      "people_located": 4,
+      "candidate_cells": 573
+    },
+    {
+      "step": 27,
+      "people_located": 4,
+      "candidate_cells": 572
+    },
+    {
+      "step": 28,
+      "people_located": 4,
+      "candidate_cells": 557
+    },
+    {
+      "step": 29,
+      "people_located": 4,
+      "candidate_cells": 555
+    },
+    {
+      "step": 30,
+      "people_located": 4,
+      "candidate_cells": 554
+    },
+    {
+      "step": 31,
+      "people_located": 4,
+      "candidate_cells": 553
+    },
+    {
+      "step": 32,
+      "people_located": 4,
+      "candidate_cells": 552
+    },
+    {
+      "step": 33,
+      "people_located": 5,
+      "candidate_cells": 551
+    },
+    {
+      "step": 34,
+      "people_located": 5,
+      "candidate_cells": 534
+    },
+    {
+      "step": 35,
+      "people_located": 5,
+      "candidate_cells": 491
+    },
+    {
+      "step": 36,
+      "people_located": 6,
+      "candidate_cells": 490
+    },
+    {
+      "step": 37,
+      "people_located": 6,
+      "candidate_cells": 472
+    },
+    {
+      "step": 38,
+      "people_located": 6,
+      "candidate_cells": 470
+    },
+    {
+      "step": 39,
+      "people_located": 6,
+      "candidate_cells": 444
+    },
+    {
+      "step": 40,
+      "people_located": 6,
+      "candidate_cells": 443
+    },
+    {
+      "step": 41,
+      "people_located": 6,
+      "candidate_cells": 390
+    },
+    {
+      "step": 42,
+      "people_located": 6,
+      "candidate_cells": 376
+    },
+    {
+      "step": 43,
+      "people_located": 6,
+      "candidate_cells": 374
+    },
+    {
+      "step": 44,
+      "people_located": 7,
+      "candidate_cells": 341
+    },
+    {
+      "step": 45,
+      "people_located": 7,
+      "candidate_cells": 317
+    },
+    {
+      "step": 46,
+      "people_located": 7,
+      "candidate_cells": 303
+    },
+    {
+      "step": 47,
+      "people_located": 7,
+      "candidate_cells": 288
+    },
+    {
+      "step": 48,
+      "people_located": 8,
+      "candidate_cells": 287
+    },
+    {
+      "step": 49,
+      "people_located": 8,
+      "candidate_cells": 263
+    },
+    {
+      "step": 50,
+      "people_located": 9,
+      "candidate_cells": 262
+    },
+    {
+      "step": 51,
+      "people_located": 9,
+      "candidate_cells": 261
+    },
+    {
+      "step": 52,
+      "people_located": 9,
+      "candidate_cells": 260
+    },
+    {
+      "step": 53,
+      "people_located": 9,
+      "candidate_cells": 259
+    },
+    {
+      "step": 54,
+      "people_located": 10,
+      "candidate_cells": 225
+    },
+    {
+      "step": 55,
+      "people_located": 10,
+      "candidate_cells": 204
+    },
+    {
+      "step": 56,
+      "people_located": 10,
+      "candidate_cells": 187
+    },
+    {
+      "step": 57,
+      "people_located": 10,
+      "candidate_cells": 186
+    },
+    {
+      "step": 58,
+      "people_located": 10,
+      "candidate_cells": 172
+    },
+    {
+      "step": 59,
+      "people_located": 11,
+      "candidate_cells": 171
+    },
+    {
+      "step": 60,
+      "people_located": 12,
+      "candidate_cells": 170
+    },
+    {
+      "step": 61,
+      "people_located": 12,
+      "candidate_cells": 161
+    },
+    {
+      "step": 62,
+      "people_located": 12,
+      "candidate_cells": 160
+    },
+    {
+      "step": 63,
+      "people_located": 13,
+      "candidate_cells": 159
+    },
+    {
+      "step": 64,
+      "people_located": 13,
+      "candidate_cells": 137
+    },
+    {
+      "step": 65,
+      "people_located": 13,
+      "candidate_cells": 117
+    },
+    {
+      "step": 66,
+      "people_located": 13,
+      "candidate_cells": 105
+    },
+    {
+      "step": 67,
+      "people_located": 13,
+      "candidate_cells": 100
+    },
+    {
+      "step": 68,
+      "people_located": 13,
+      "candidate_cells": 84
+    },
+    {
+      "step": 69,
+      "people_located": 13,
+      "candidate_cells": 82
+    },
+    {
+      "step": 70,
+      "people_located": 13,
+      "candidate_cells": 81
+    },
+    {
+      "step": 71,
+      "people_located": 14,
+      "candidate_cells": 45
+    },
+    {
+      "step": 72,
+      "people_located": 15,
+      "candidate_cells": 44
+    },
+    {
+      "step": 73,
+      "people_located": 16,
+      "candidate_cells": 41
+    },
+    {
+      "step": 74,
+      "people_located": 17,
+      "candidate_cells": 39
+    },
+    {
+      "step": 75,
+      "people_located": 17,
+      "candidate_cells": 34
+    },
+    {
+      "step": 76,
+      "people_located": 18,
+      "candidate_cells": 32
+    },
+    {
+      "step": 77,
+      "people_located": 19,
+      "candidate_cells": 30
+    },
+    {
+      "step": 78,
+      "people_located": 20,
+      "candidate_cells": 28
+    },
+    {
+      "step": 79,
+      "people_located": 21,
+      "candidate_cells": 26
+    },
+    {
+      "step": 80,
+      "people_located": 21,
+      "candidate_cells": 25
+    },
+    {
+      "step": 81,
+      "people_located": 22,
+      "candidate_cells": 24
+    },
+    {
+      "step": 82,
+      "people_located": 22,
+      "candidate_cells": 24
+    },
+    {
+      "step": 83,
+      "people_located": 22,
+      "candidate_cells": 24
+    },
+    {
+      "step": 84,
+      "people_located": 23,
+      "candidate_cells": 23
+    },
+    {
+      "step": 85,
+      "people_located": 23,
+      "candidate_cells": 23
+    }
+  ]
+}
