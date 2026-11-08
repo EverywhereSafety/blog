@@ -13,4 +13,93 @@
 <meta name="twitter:description" content="{{DESCRIPTION}}">
 <meta name="twitter:image" content="{{IMAGE}}">
 <script type="application/ld+json">{{STRUCTURED_DATA}}</script>
-<link rel="icon" href="https://avatars.githubusercontent.com/u/334873385?v=4"><link rel="stylesheet" href="https://everywheresafety.github.io/assets/site.css"><style>.project-page{max-width:850px;padding:55px 0 80px;overflow-wrap:break-word}.project-page h1{font-size:clamp(2.6rem,5vw,4.25rem);max-width:none;line-height:1.05;letter-spacing:-.04em;text-wrap:balance}.project-page h2{font-size:2.2rem;margin:48px 0 15px}.project-page h3{font-size:1.5rem}.project-page p{font-size:1.08rem;line-height:1.75;color:var(--soft)}.project-page .article-subtitle{font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.35;margin:12px 0 32px}.project-page table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}.project-page th,.project-page td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}.project-page figure{margin:30px 0}.project-page img{display:block;width:100%;border:1px solid var(--line);border-radius:18px}.project-page figcaption{font-size:.85rem;color:var(--muted);margin-top:10px}.project-page .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}.project-page .card{padding:25px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.project-page .card p{font-size:1rem}.project-page a{text-underline-offset:4px}.project-page pre{white-space:pre-wrap;background:var(--surface);padding:20px;border-radius:12px;overflow-wrap:anywhere}.project-page .pill{display:inline-block;padding:5px 12px;border-radius:30px;background:var(--accent-light);font-size:.8rem;margin:15px 5px 0 0}@media(max-width:650px){.project-page .cards{grid-template-columns:1fr}.site-header{flex-wrap:wrap;padding:12px 0;gap:10px}nav{flex-wrap:wrap}}.project-links{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0}.project-links a{display:inline-flex;align-items:center;padding:11px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);font-size:.95rem;text-decoration:none}.project-links a:hover{border-color:var(--accent);background:var(--accent-light)}.project-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}</style></head><body><header class="site-header"><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a><nav aria-label="Primary"><a href="https://everywheresafety.github.io/murdoku/">Murdoku Lab</a><a href="https://everywheresafety.github.io/blog/">Blog</a><a href="https://github.com/EverywhereSafety">GitHub ↗</a></nav></header><main class="project-page">{{CONTENT}}<nav class="project-links" aria-label="Explore Murdoku and Agent Horizon"><a href="https://everywheresafety.github.io/murdoku/play/">Play a case</a><a href="https://everywheresafety.github.io/murdoku/">Explore Murdoku Lab</a><a href="https://github.com/EverywhereSafety/murdoku-lab">Code</a><a href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries and rollouts</a><a href="https://huggingface.co/EverywhereSafety/murdoku-detective-4b">Murdoku Detective 4B</a><a href="https://github.com/EverywhereSafety/agent-horizon">Agent Horizon</a></nav></main><footer><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a></footer></body></html>
+<link rel="icon" href="https://avatars.githubusercontent.com/u/334873385?v=4">
+<link rel="stylesheet" href="https://everywheresafety.github.io/assets/site.css">
+<style>
+/* Editorial reading layout, in the Everywhere Safety palette. */
+body { background: var(--bg); }
+.site-header { min-height: 82px; border-bottom: 0; }
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand > span { margin-left: -10px; }
+.brand img { width: 30px; height: 30px; padding: 4px; border-radius: 8px; background: var(--ink); object-fit: contain; }
+.article-page { width: 100%; max-width: none; padding: 0 0 80px; overflow-wrap: break-word; }
+.article-heading { padding: 52px 24px 32px; border-bottom: 1px solid var(--line); }
+.article-heading > * { width: min(704px, 100%); margin-inline: auto; }
+.article-heading .eyebrow { margin-bottom: 18px; }
+.article-heading .eyebrow a { text-decoration: none; }
+.article-heading h1 { max-width: 704px; margin-bottom: 18px; font-family: var(--sans); font-size: clamp(2.1rem, 4vw, 3.125rem); font-weight: 650; line-height: 1.12; letter-spacing: -.035em; text-wrap: balance; }
+.article-heading .article-subtitle { margin-block: 0; color: var(--soft); font-size: clamp(1.12rem, 2vw, 1.35rem); line-height: 1.45; }
+.article-body { width: min(704px, calc(100% - 48px)); margin: 0 auto; font-size: 17px; line-height: 1.75; }
+.article-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding: 25px 0 30px; color: var(--muted); font-size: 13px; }
+.article-meta a { color: var(--soft); text-decoration: none; }
+.article-body p { margin: 0 0 20px; }
+.article-body h2, .article-body h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.025em; scroll-margin-top: 28px; }
+.article-body h2 { margin: 52px 0 20px; font-size: clamp(1.65rem, 3vw, 2rem); line-height: 1.25; }
+.article-body h3 { margin: 32px 0 14px; font-size: 1.35rem; line-height: 1.3; }
+.article-body a:not(.button) { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.article-body a:hover { text-decoration-color: var(--ink); }
+.article-body a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.article-body .hero-actions { margin: 26px 0 32px; gap: 10px; }
+.article-figure { position: relative; left: 50%; transform: translateX(-50%); width: min(1000px, calc(100vw - 64px)); margin: 36px 0 40px; }
+.article-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+.article-figure figcaption { width: min(704px, 100%); margin: 12px auto 0; color: var(--soft); font-size: 13px; line-height: 1.55; }
+.article-table { margin: 28px 0; max-width: 100%; overflow-x: auto; }
+.article-table table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.5; }
+.article-table th, .article-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.article-table th { color: var(--accent); font-weight: 600; }
+.article-table tbody tr:nth-child(even) { background: var(--surface); }
+.article-body pre { white-space: pre-wrap; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow-wrap: anywhere; font-size: 14px; }
+.article-body details { margin: 24px 0 36px; padding: 20px 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.article-body summary { cursor: pointer; color: var(--accent); font-weight: 600; line-height: 1.5; }
+.article-body details[open] summary { margin-bottom: 22px; }
+.article-body details .article-figure { position: static; transform: none; width: 100%; }
+.article-body details p:last-child { margin-bottom: 0; }
+.article-resources { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+.article-resources .eyebrow { margin-bottom: 16px; }
+.article-resources .hero-actions { margin: 0; }
+footer { padding-top: 25px; }
+footer p { font-family: var(--sans); font-size: 13px; }
+@media (max-width: 650px) {
+  .site-header { flex-wrap: wrap; min-height: 74px; gap: 12px; padding: 16px 0; }
+  .site-header .brand { font-size: 1.25rem; }
+  .site-header nav { flex-wrap: wrap; gap: 18px; }
+  .article-heading { padding: 34px 24px 26px; }
+  .article-body { font-size: 16px; }
+  .article-meta { padding: 20px 0 26px; }
+  .article-figure { width: calc(100vw - 32px); margin-top: 28px; }
+  .article-body details { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="https://everywheresafety.github.io/"><img src="https://everywheresafety.github.io/assets/everywhere-safety-mark-white.png" alt="" width="30" height="30">Everywhere Safety<span>.</span></a>
+  <nav aria-label="Primary"><a href="https://everywheresafety.github.io/murdoku/">Murdoku Lab</a><a href="https://everywheresafety.github.io/blog/">Blog</a><a href="https://github.com/EverywhereSafety">GitHub ↗</a></nav>
+</header>
+<main class="article-page">
+  <article aria-labelledby="article-title">
+    <header class="article-heading">
+      <p class="eyebrow"><a href="https://everywheresafety.github.io/blog/">Everywhere Safety Blog</a></p>
+      <h1 id="article-title">{{TITLE}}</h1>
+      {{SUBTITLE}}
+    </header>
+    <div class="article-body">
+      <div class="article-meta"><a href="https://everywheresafety.github.io/">Everywhere Safety</a><span>{{READING_MINUTES}} min read</span></div>
+      {{CONTENT}}
+      <nav class="article-resources" aria-label="Explore Murdoku and Agent Horizon">
+        <p class="eyebrow">Explore the workshop</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://everywheresafety.github.io/murdoku/play/">Play a case →</a>
+          <a class="button" href="https://everywheresafety.github.io/murdoku/">Murdoku Lab</a>
+          <a class="button" href="https://github.com/EverywhereSafety/murdoku-lab">Code ↗</a>
+          <a class="button" href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries &amp; rollouts ↗</a>
+          <a class="button" href="https://huggingface.co/EverywhereSafety/murdoku-detective-4b">Murdoku Detective 4B ↗</a>
+          <a class="button" href="https://github.com/EverywhereSafety/agent-horizon">Agent Horizon ↗</a>
+        </div>
+      </nav>
+    </div>
+  </article>
+</main>
+<footer><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a><p>Puzzles, worlds and agents.</p></footer>
+</body></html>

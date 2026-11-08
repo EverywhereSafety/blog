@@ -51,11 +51,36 @@ def main():
             "inLanguage": "en",
         }
         content = markdown.markdown(text, extensions=["extra", "toc"])
+        # The title and subtitle belong to the article header, outside the prose.
+        content = re.sub(r"^<h1\b[^>]*>.*?</h1>\s*", "", content, count=1)
+        subtitle_match = re.match(r'<p class="article-subtitle">.*?</p>', content)
+        subtitle = subtitle_match[0] if subtitle_match else ""
+        if subtitle_match:
+            content = content[subtitle_match.end():].lstrip()
+        reading_minutes = max(1, (len(re.sub(r"<[^>]+>", " ", content).split()) + 219) // 220)
+
+        def render_figure(match):
+            image_html = match[1]
+            alt = re.search(r'alt="([^"]*)"', image_html)
+            caption = f"<figcaption>{alt[1]}</figcaption>" if alt and alt[1] else ""
+            return f'<figure class="article-figure">{image_html}{caption}</figure>'
+
+        content = re.sub(
+            r'<p>((?:<a\b[^>]*>)?<img\b[^>]+/>(?:</a>)?)</p>',
+            render_figure, content,
+        )
+        content = re.sub(
+            r"(<table>.*?</table>)",
+            r'<div class="article-table" tabindex="0" role="region" aria-label="Data table">\1</div>',
+            content, flags=re.S,
+        )
         rendered = (
             template.replace("{{TITLE}}", html.escape(title))
             .replace("{{DESCRIPTION}}", html.escape(description, quote=True))
             .replace("{{URL}}", html.escape(url, quote=True))
             .replace("{{IMAGE}}", html.escape(image, quote=True))
+            .replace("{{SUBTITLE}}", subtitle)
+            .replace("{{READING_MINUTES}}", str(reading_minutes))
             .replace(
                 "{{STRUCTURED_DATA}}", json.dumps(structured).replace("<", "\\u003c")
             )

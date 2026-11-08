@@ -8,7 +8,11 @@ We are fans of Murdoku. A board full of characters, objects and little clues can
 
 That is what we are building with **Murdoku Lab**. It generates detective puzzles, verifies their solutions and turns them into playable cases. You can also export each case as a text or visual query for an agent.
 
-[Play a case](https://everywheresafety.github.io/murdoku/play/) · [GitHub](https://github.com/EverywhereSafety/murdoku-lab) · [Queries and rollouts](https://huggingface.co/datasets/EverywhereSafety/murdoku-lab)
+<div class="hero-actions">
+<a class="button primary" href="https://everywheresafety.github.io/murdoku/play/">Play a case →</a>
+<a class="button" href="https://github.com/EverywhereSafety/murdoku-lab">GitHub ↗</a>
+<a class="button" href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries &amp; rollouts ↗</a>
+</div>
 
 [![The current Murdoku player: an illustrated museum board, suspect portraits and linked clues](assets/play-preview.png)](https://everywheresafety.github.io/murdoku/play/)
 

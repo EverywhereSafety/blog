@@ -13,14 +13,89 @@
 <meta name="twitter:description" content="Manuel Garand confirmed that we were the first to submit the correct answer to the official Murdoku Treasure Hunt. Our solve took about 20 minutes.">
 <meta name="twitter:image" content="https://everywheresafety.github.io/blog/treasure-hunt/assets/play-preview.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How we solved the Treasure Hunt in 20 minutes", "description": "Manuel Garand confirmed that we were the first to submit the correct answer to the official Murdoku Treasure Hunt. Our solve took about 20 minutes.", "url": "https://everywheresafety.github.io/blog/treasure-hunt/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://everywheresafety.github.io/blog/treasure-hunt/"}, "image": ["https://everywheresafety.github.io/blog/treasure-hunt/assets/play-preview.png"], "author": {"@type": "Organization", "name": "Everywhere Safety", "url": "https://everywheresafety.github.io/"}, "publisher": {"@type": "Organization", "name": "Everywhere Safety", "url": "https://everywheresafety.github.io/"}, "inLanguage": "en"}</script>
-<link rel="icon" href="https://avatars.githubusercontent.com/u/334873385?v=4"><link rel="stylesheet" href="https://everywheresafety.github.io/assets/site.css"><style>.project-page{max-width:850px;padding:55px 0 80px;overflow-wrap:break-word}.project-page h1{font-size:clamp(2.6rem,5vw,4.25rem);max-width:none;line-height:1.05;letter-spacing:-.04em;text-wrap:balance}.project-page h2{font-size:2.2rem;margin:48px 0 15px}.project-page h3{font-size:1.5rem}.project-page p{font-size:1.08rem;line-height:1.75;color:var(--soft)}.project-page .article-subtitle{font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.35;margin:12px 0 32px}.project-page table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}.project-page th,.project-page td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}.project-page figure{margin:30px 0}.project-page img{display:block;width:100%;border:1px solid var(--line);border-radius:18px}.project-page figcaption{font-size:.85rem;color:var(--muted);margin-top:10px}.project-page .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}.project-page .card{padding:25px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.project-page .card p{font-size:1rem}.project-page a{text-underline-offset:4px}.project-page pre{white-space:pre-wrap;background:var(--surface);padding:20px;border-radius:12px;overflow-wrap:anywhere}.project-page .pill{display:inline-block;padding:5px 12px;border-radius:30px;background:var(--accent-light);font-size:.8rem;margin:15px 5px 0 0}@media(max-width:650px){.project-page .cards{grid-template-columns:1fr}.site-header{flex-wrap:wrap;padding:12px 0;gap:10px}nav{flex-wrap:wrap}}.project-links{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0}.project-links a{display:inline-flex;align-items:center;padding:11px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);font-size:.95rem;text-decoration:none}.project-links a:hover{border-color:var(--accent);background:var(--accent-light)}.project-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}</style></head><body><header class="site-header"><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a><nav aria-label="Primary"><a href="https://everywheresafety.github.io/murdoku/">Murdoku Lab</a><a href="https://everywheresafety.github.io/blog/">Blog</a><a href="https://github.com/EverywhereSafety">GitHub ↗</a></nav></header><main class="project-page"><h1 id="how-we-solved-the-treasure-hunt-in-20-minutes">How we solved the Treasure Hunt in 20 minutes</h1>
-<p class="article-subtitle">and built a workshop for endless puzzles</p>
-
-<p>Manuel Garand confirmed that we were the first to submit the correct answer to the official Murdoku Treasure Hunt. Our solve took about 20 minutes.</p>
+<link rel="icon" href="https://avatars.githubusercontent.com/u/334873385?v=4">
+<link rel="stylesheet" href="https://everywheresafety.github.io/assets/site.css">
+<style>
+/* Editorial reading layout, in the Everywhere Safety palette. */
+body { background: var(--bg); }
+.site-header { min-height: 82px; border-bottom: 0; }
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand > span { margin-left: -10px; }
+.brand img { width: 30px; height: 30px; padding: 4px; border-radius: 8px; background: var(--ink); object-fit: contain; }
+.article-page { width: 100%; max-width: none; padding: 0 0 80px; overflow-wrap: break-word; }
+.article-heading { padding: 52px 24px 32px; border-bottom: 1px solid var(--line); }
+.article-heading > * { width: min(704px, 100%); margin-inline: auto; }
+.article-heading .eyebrow { margin-bottom: 18px; }
+.article-heading .eyebrow a { text-decoration: none; }
+.article-heading h1 { max-width: 704px; margin-bottom: 18px; font-family: var(--sans); font-size: clamp(2.1rem, 4vw, 3.125rem); font-weight: 650; line-height: 1.12; letter-spacing: -.035em; text-wrap: balance; }
+.article-heading .article-subtitle { margin-block: 0; color: var(--soft); font-size: clamp(1.12rem, 2vw, 1.35rem); line-height: 1.45; }
+.article-body { width: min(704px, calc(100% - 48px)); margin: 0 auto; font-size: 17px; line-height: 1.75; }
+.article-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; padding: 25px 0 30px; color: var(--muted); font-size: 13px; }
+.article-meta a { color: var(--soft); text-decoration: none; }
+.article-body p { margin: 0 0 20px; }
+.article-body h2, .article-body h3 { font-family: var(--sans); font-weight: 600; letter-spacing: -.025em; scroll-margin-top: 28px; }
+.article-body h2 { margin: 52px 0 20px; font-size: clamp(1.65rem, 3vw, 2rem); line-height: 1.25; }
+.article-body h3 { margin: 32px 0 14px; font-size: 1.35rem; line-height: 1.3; }
+.article-body a:not(.button) { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.article-body a:hover { text-decoration-color: var(--ink); }
+.article-body a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.article-body .hero-actions { margin: 26px 0 32px; gap: 10px; }
+.article-figure { position: relative; left: 50%; transform: translateX(-50%); width: min(1000px, calc(100vw - 64px)); margin: 36px 0 40px; }
+.article-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+.article-figure figcaption { width: min(704px, 100%); margin: 12px auto 0; color: var(--soft); font-size: 13px; line-height: 1.55; }
+.article-table { margin: 28px 0; max-width: 100%; overflow-x: auto; }
+.article-table table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.5; }
+.article-table th, .article-table td { padding: 12px 10px; text-align: left; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.article-table th { color: var(--accent); font-weight: 600; }
+.article-table tbody tr:nth-child(even) { background: var(--surface); }
+.article-body pre { white-space: pre-wrap; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow-wrap: anywhere; font-size: 14px; }
+.article-body details { margin: 24px 0 36px; padding: 20px 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.article-body summary { cursor: pointer; color: var(--accent); font-weight: 600; line-height: 1.5; }
+.article-body details[open] summary { margin-bottom: 22px; }
+.article-body details .article-figure { position: static; transform: none; width: 100%; }
+.article-body details p:last-child { margin-bottom: 0; }
+.article-resources { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+.article-resources .eyebrow { margin-bottom: 16px; }
+.article-resources .hero-actions { margin: 0; }
+footer { padding-top: 25px; }
+footer p { font-family: var(--sans); font-size: 13px; }
+@media (max-width: 650px) {
+  .site-header { flex-wrap: wrap; min-height: 74px; gap: 12px; padding: 16px 0; }
+  .site-header .brand { font-size: 1.25rem; }
+  .site-header nav { flex-wrap: wrap; gap: 18px; }
+  .article-heading { padding: 34px 24px 26px; }
+  .article-body { font-size: 16px; }
+  .article-meta { padding: 20px 0 26px; }
+  .article-figure { width: calc(100vw - 32px); margin-top: 28px; }
+  .article-body details { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="https://everywheresafety.github.io/"><img src="https://everywheresafety.github.io/assets/everywhere-safety-mark-white.png" alt="" width="30" height="30">Everywhere Safety<span>.</span></a>
+  <nav aria-label="Primary"><a href="https://everywheresafety.github.io/murdoku/">Murdoku Lab</a><a href="https://everywheresafety.github.io/blog/">Blog</a><a href="https://github.com/EverywhereSafety">GitHub ↗</a></nav>
+</header>
+<main class="article-page">
+  <article aria-labelledby="article-title">
+    <header class="article-heading">
+      <p class="eyebrow"><a href="https://everywheresafety.github.io/blog/">Everywhere Safety Blog</a></p>
+      <h1 id="article-title">How we solved the Treasure Hunt in 20 minutes</h1>
+      <p class="article-subtitle">and built a workshop for endless puzzles</p>
+    </header>
+    <div class="article-body">
+      <div class="article-meta"><a href="https://everywheresafety.github.io/">Everywhere Safety</a><span>6 min read</span></div>
+      <p>Manuel Garand confirmed that we were the first to submit the correct answer to the official Murdoku Treasure Hunt. Our solve took about 20 minutes.</p>
 <p>We are fans of Murdoku. A board full of characters, objects and little clues can keep us busy for hours. We wanted more cases to play. Could we build a workshop that keeps making them, with new settings and clues, and the same care for how a puzzle comes together?</p>
 <p>That is what we are building with <strong>Murdoku Lab</strong>. It generates detective puzzles, verifies their solutions and turns them into playable cases. You can also export each case as a text or visual query for an agent.</p>
-<p><a href="https://everywheresafety.github.io/murdoku/play/">Play a case</a> · <a href="https://github.com/EverywhereSafety/murdoku-lab">GitHub</a> · <a href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries and rollouts</a></p>
-<p><a href="https://everywheresafety.github.io/murdoku/play/"><img alt="The current Murdoku player: an illustrated museum board, suspect portraits and linked clues" src="assets/play-preview.png" /></a></p>
+<div class="hero-actions">
+<a class="button primary" href="https://everywheresafety.github.io/murdoku/play/">Play a case →</a>
+<a class="button" href="https://github.com/EverywhereSafety/murdoku-lab">GitHub ↗</a>
+<a class="button" href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries &amp; rollouts ↗</a>
+</div>
+
+<figure class="article-figure"><a href="https://everywheresafety.github.io/murdoku/play/"><img alt="The current Murdoku player: an illustrated museum board, suspect portraits and linked clues" src="assets/play-preview.png" /></a><figcaption>The current Murdoku player: an illustrated museum board, suspect portraits and linked clues</figcaption></figure>
 <h2 id="how-we-solved-the-contest">How we solved the contest</h2>
 <p>The Treasure Hunt has a 24×24 island, 23 people and a hidden treasure. Ships, cabins, clothing and objects all matter to the clues.</p>
 <p>Our <a href="https://huggingface.co/EverywhereSafety/murdoku-detective-4b">Murdoku Detective 4B</a>, trained on generated Murdoku puzzles, read the PDF, transcribed the map and clues, and wrote an OR-Tools CP-SAT program to solve the puzzle.</p>
@@ -29,7 +104,7 @@
 <p>The player now has eight illustrated settings: a manor, ocean liner, museum,
 theatre, chalet, glasshouses, night train and college. Rooms, furniture, wall
 finishes and board frames change with the setting.</p>
-<p><a href="https://everywheresafety.github.io/murdoku/play/#collection"><img alt="Eight illustrated worlds in Murdoku Play" src="assets/play-exp-settings.jpg" /></a></p>
+<figure class="article-figure"><a href="https://everywheresafety.github.io/murdoku/play/#collection"><img alt="Eight illustrated worlds in Murdoku Play" src="assets/play-exp-settings.jpg" /></a><figcaption>Eight illustrated worlds in Murdoku Play</figcaption></figure>
 <p>The generated collection has 6×6, 7×7 and 8×8 cases. A guided training case teaches
 the rules, graded hints help when you get stuck, and a daily case gives everyone
 a shared mystery. The classic 16×16 estate and 24×24 museum are there for a longer
@@ -39,20 +114,20 @@ or <a href="https://everywheresafety.github.io/murdoku/play/#collection">browse 
 <h2 id="build-a-case-with-an-answer-we-can-check">Build a case with an answer we can check</h2>
 <p>The generator starts with a board, objects, character placements and constraints. Solvers verify that the clues determine a unique solution. We keep that solution as the answer key.</p>
 <p>The semantic setter adds the setting, names, room labels and clue wording. The answer is already established when this happens. Each themed case is checked against its formal puzzle before export.</p>
-<p><img alt="Verified puzzle structures, semantic settings, paired queries and answer checking" src="assets/semantic-pipeline.png" /></p>
+<figure class="article-figure"><img alt="Verified puzzle structures, semantic settings, paired queries and answer checking" src="assets/semantic-pipeline.png" /><figcaption>Verified puzzle structures, semantic settings, paired queries and answer checking</figcaption></figure>
 <p>This is an instance of <a href="https://arxiv.org/abs/2609.27321">VHD-Play</a>. A solved formal mechanism supplies the structure and gold reward reference. The setter turns it into a semantically diverse experience. In Murdoku Lab, that experience is a mystery you can play.</p>
 <h2 id="more-than-a-change-of-names">More than a change of names</h2>
 <p>A climbing gym, a robotics laboratory and a music school give the clues different things to talk about. We vary room layouts, terrain, furniture, character attributes and clue relationships along with the setting and wording.</p>
-<p><img alt="Generated cases in a climbing gym, robotics laboratory and music school" src="assets/semantic-diversity.png" /></p>
+<figure class="article-figure"><img alt="Generated cases in a climbing gym, robotics laboratory and music school" src="assets/semantic-diversity.png" /><figcaption>Generated cases in a climbing gym, robotics laboratory and music school</figcaption></figure>
 <p>The larger scene presets give regions distinct roles. A library gets shelves and chairs. A garden gets connected patches of water. A courtyard manor has rooms around a cloister, with furniture and clear doorways. These details are built into the scene before character placements and clues are chosen.</p>
 <p>The generator supports boards up to 24×24 in its larger puzzle families. Text and visual exports describe the same case and use the same answer key.</p>
-<p><img alt="One verified puzzle exported as text and a visual observation" src="assets/query-views.png" /></p>
+<figure class="article-figure"><img alt="One verified puzzle exported as text and a visual observation" src="assets/query-views.png" /><figcaption>One verified puzzle exported as text and a visual observation</figcaption></figure>
 <h2 id="make-the-clues-worth-following">Make the clues worth following</h2>
 <p>A unique answer is the starting point. We also want players to find a way in, make useful discoveries and have a reason to keep going.</p>
 <p>We record deduction traces and measure the first placement, the longest gap between placements and the longest chain of consecutive placements. We also track partial discoveries, such as narrowing someone to one room or reserving a row. The generator can screen cases across several deduction orders using these measurements.</p>
 <p>Below are 96 generated cases, with 12 in each combination of board sizes 6–9 and medium or hard difficulty. Text and visual versions count as one case.</p>
-<p><img alt="Opening discoveries, discovery gaps and placement chains across 96 generated cases" src="assets/puzzle-rhythm.png" /></p>
-<table>
+<figure class="article-figure"><img alt="Opening discoveries, discovery gaps and placement chains across 96 generated cases" src="assets/puzzle-rhythm.png" /><figcaption>Opening discoveries, discovery gaps and placement chains across 96 generated cases</figcaption></figure>
+<div class="article-table" tabindex="0" role="region" aria-label="Data table"><table>
 <thead>
 <tr>
 <th>Board</th>
@@ -120,7 +195,7 @@ or <a href="https://everywheresafety.github.io/murdoku/play/#collection">browse 
 <td>5</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>These are median deduction-step counts from the canonical solver. The 9×9 cases in this sample often start quickly and then leave longer gaps. That gives us something specific to work on when selecting a collection. Actual play helps us decide which patterns are enjoyable.</p>
 <p><a href="https://github.com/EverywhereSafety/murdoku-lab/blob/main/docs/reference/reasoning-profiles.md#generated-query-sample">Measurement definitions</a> · <a href="assets/puzzle-rhythm.json">Aggregate measurements</a></p>
 <h2 id="a-closer-look-at-the-treasure-hunt">A closer look at the Treasure Hunt</h2>
@@ -129,9 +204,9 @@ or <a href="https://everywheresafety.github.io/murdoku/play/#collection">browse 
 <summary>Show the contest deductions and rhythm analysis</summary>
 <p>Hyacinth can only occupy Cliff columns 6 or 7. A hat wearer cannot share her column or use an adjacent column. Mortimer's Galleon candidates are all in columns 6 or 7, so they disappear. His remaining candidates are on Frigate A in row 10. That row reservation then narrows other characters' possibilities.</p>
 <p>This is a breakthrough without an exact placement. Counting only fully located characters would miss it.</p>
-<p><img alt="A partial discovery connects Hyacinth's columns to Mortimer's remaining ship and row" src="assets/opening-breakthrough.png" /></p>
+<figure class="article-figure"><img alt="A partial discovery connects Hyacinth's columns to Mortimer's remaining ship and row" src="assets/opening-breakthrough.png" /><figcaption>A partial discovery connects Hyacinth's columns to Mortimer's remaining ship and row</figcaption></figure>
 <p>Our recorded trace reduced the initial 1,782 candidate cells to 1,035 through cheap propagation before fixing anyone. The first exact placement appeared at event 13. Ten of the 23 people became fixed in events 71–84, and the treasure was determined at event 85.</p>
-<p><img alt="Candidate reduction and exact placements through the contest deduction trace" src="assets/contest-rhythm.png" /></p>
+<figure class="article-figure"><img alt="Candidate reduction and exact placements through the contest deduction trace" src="assets/contest-rhythm.png" /><figcaption>Candidate reduction and exact placements through the contest deduction trace</figcaption></figure>
 <p>Eight character-processing orders retained the broad pattern, with the treasure determined at event 84 or 85. The trace includes bounded contradiction checks. Its events describe one solver's reasoning procedure rather than elapsed time or a reconstruction of every human deduction. The generated-case figure above uses a different observer, so its raw step counts should be read separately.</p>
 </details>
 <h2 id="use-the-workshop">Use the workshop</h2>
@@ -139,4 +214,20 @@ or <a href="https://everywheresafety.github.io/murdoku/play/#collection">browse 
 <p>The browser supports candidate notes, personal exclusions, undo and redo, clue highlighting, zoom and pan. Placing someone crosses out the rest of their row and column. You can peek at the objects under a character without moving them.</p>
 <p>The same cases can be used as agent tasks. The environment provides observations and tools, and checks submissions against the verified solution. Our <a href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Hugging Face dataset</a> packages queries and recorded model rollouts together for RL, SFT and analysis. <a href="https://github.com/EverywhereSafety/agent-horizon">Agent Horizon</a> supplies the long-horizon training infrastructure built on veRL.</p>
 <p>We want more good puzzles to play and share. Training an AI detective is one way to use them.</p>
-<p>Murdoku was created by <a href="https://murdoku.com/">Manuel Garand</a>. Try his puzzles, and <a href="https://everywheresafety.github.io/murdoku/play/">play a case from our workshop</a>.</p><nav class="project-links" aria-label="Explore Murdoku and Agent Horizon"><a href="https://everywheresafety.github.io/murdoku/play/">Play a case</a><a href="https://everywheresafety.github.io/murdoku/">Explore Murdoku Lab</a><a href="https://github.com/EverywhereSafety/murdoku-lab">Code</a><a href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries and rollouts</a><a href="https://huggingface.co/EverywhereSafety/murdoku-detective-4b">Murdoku Detective 4B</a><a href="https://github.com/EverywhereSafety/agent-horizon">Agent Horizon</a></nav></main><footer><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a></footer></body></html>
+<p>Murdoku was created by <a href="https://murdoku.com/">Manuel Garand</a>. Try his puzzles, and <a href="https://everywheresafety.github.io/murdoku/play/">play a case from our workshop</a>.</p>
+      <nav class="article-resources" aria-label="Explore Murdoku and Agent Horizon">
+        <p class="eyebrow">Explore the workshop</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://everywheresafety.github.io/murdoku/play/">Play a case →</a>
+          <a class="button" href="https://everywheresafety.github.io/murdoku/">Murdoku Lab</a>
+          <a class="button" href="https://github.com/EverywhereSafety/murdoku-lab">Code ↗</a>
+          <a class="button" href="https://huggingface.co/datasets/EverywhereSafety/murdoku-lab">Queries &amp; rollouts ↗</a>
+          <a class="button" href="https://huggingface.co/EverywhereSafety/murdoku-detective-4b">Murdoku Detective 4B ↗</a>
+          <a class="button" href="https://github.com/EverywhereSafety/agent-horizon">Agent Horizon ↗</a>
+        </div>
+      </nav>
+    </div>
+  </article>
+</main>
+<footer><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a><p>Puzzles, worlds and agents.</p></footer>
+</body></html>
