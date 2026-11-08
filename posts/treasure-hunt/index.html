@@ -69,31 +69,34 @@ footer p { font-family: var(--sans); font-size: 13px; }
   .article-figure { width: calc(100vw - 32px); margin-top: 28px; }
   .article-body details { padding: 18px; }
 }
-.article-layout { width: min(1280px, calc(100% - 64px)); margin: 0 auto; display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 56px; align-items: start; }
-.article-layout .article-body { width: min(704px, 100%); min-width: 0; }
-.contents-sidebar { position: sticky; top: 28px; padding: 30px 24px 8px 0; border-right: 1px solid var(--line); max-height: calc(100vh - 56px); overflow-y: auto; }
-.contents-sidebar h2 { margin: 0 0 20px; font-family: var(--sans); font-size: 17px; font-weight: 600; }
+.article-layout { position: relative; width: 100%; margin: 0 auto; }
+.article-layout .article-body { width: min(704px, calc(100% - 48px)); min-width: 0; }
+.contents-rail { position: absolute; top: 0; bottom: 0; left: max(24px, calc(50% - 688px)); width: 176px; }
+.contents-sidebar { position: sticky; top: 32px; max-height: calc(100vh - 64px); overflow-y: auto; padding: 26px 0 8px; }
+.contents-sidebar h2 { margin: 0 0 14px 16px; color: var(--muted); font-family: var(--sans); font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .contents-sidebar nav, .mobile-contents nav { display: block; }
 .toc-list { list-style: none; margin: 0; padding: 0; }
-.toc-list li { margin: 0 0 13px; }
+.toc-list li { margin: 0 0 5px; }
 .toc-list a { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; color: var(--soft); font-size: 13px; line-height: 1.5; text-decoration: none; }
 .toc-list .toc-number { color: var(--muted); font-variant-numeric: tabular-nums; }
 .toc-list .toc-level-3 { padding-left: 15px; }
 .toc-list .toc-level-3 a { grid-template-columns: 30px minmax(0, 1fr); font-weight: 400; }
 .toc-list a:hover, .toc-list a[aria-current="location"] { color: var(--accent); }
-.toc-list a[aria-current="location"] { font-weight: 600; }
 .toc-list a[aria-current="location"] .toc-number { color: var(--accent); }
+.toc-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.contents-sidebar .toc-list a { display: block; border-left: 2px solid var(--line); padding: 7px 6px 7px 14px; font-size: 12px; line-height: 1.5; }
+.contents-sidebar .toc-number { display: none; }
+.contents-sidebar .toc-list a[aria-current="location"] { border-left-color: var(--accent); }
+.contents-sidebar .toc-level-3 { padding-left: 10px; }
 .mobile-contents { display: none; }
-@media (min-width: 1200px) {
-  .article-heading > * { transform: translateX(144px); }
-  .article-figure { width: min(940px, calc(100vw - 400px)); }
+@media (min-width: 1280px) {
+  .article-figure { width: min(960px, calc(100vw - 480px)); }
 }
-@media (max-width: 1199px) {
-  .article-layout { display: block; width: 100%; }
-  .article-layout .article-body { width: min(704px, calc(100% - 48px)); }
-  .contents-sidebar { display: none; }
+@media (max-width: 1279px) {
+  .contents-rail { display: none; }
   .article-body .mobile-contents { display: block; margin: 0 0 28px; padding: 15px 18px; }
   .mobile-contents .toc-list { margin-top: 18px; }
+  .mobile-contents .toc-list li { margin-bottom: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
@@ -111,10 +114,12 @@ footer p { font-family: var(--sans); font-size: 13px; }
       <p class="article-subtitle">and built a workshop for endless puzzles</p>
     </header>
     <div class="article-layout">
+    <div class="contents-rail">
     <aside class="contents-sidebar" aria-labelledby="contents-title">
       <h2 id="contents-title">Contents</h2>
       <nav aria-label="Article contents"><ol class="toc-list"><li class="toc-level-2"><a href="#how-we-solved-the-contest"><span class="toc-number" aria-hidden="true">1</span><span>How we solved the contest</span></a></li><li class="toc-level-2"><a href="#the-workshop-today"><span class="toc-number" aria-hidden="true">2</span><span>The workshop today</span></a></li><li class="toc-level-2"><a href="#build-a-case-with-an-answer-we-can-check"><span class="toc-number" aria-hidden="true">3</span><span>Build a case with an answer we can check</span></a></li><li class="toc-level-2"><a href="#more-than-a-change-of-names"><span class="toc-number" aria-hidden="true">4</span><span>More than a change of names</span></a></li><li class="toc-level-2"><a href="#make-the-clues-worth-following"><span class="toc-number" aria-hidden="true">5</span><span>Make the clues worth following</span></a></li><li class="toc-level-2"><a href="#a-closer-look-at-the-treasure-hunt"><span class="toc-number" aria-hidden="true">6</span><span>A closer look at the Treasure Hunt</span></a></li><li class="toc-level-2"><a href="#use-the-workshop"><span class="toc-number" aria-hidden="true">7</span><span>Use the workshop</span></a></li></ol></nav>
     </aside>
+    </div>
     <div class="article-body">
       <div class="article-meta"><a href="https://everywheresafety.github.io/">Everywhere Safety</a><span>6 min read</span></div>
       <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Article contents on smaller screens"><ol class="toc-list"><li class="toc-level-2"><a href="#how-we-solved-the-contest"><span class="toc-number" aria-hidden="true">1</span><span>How we solved the contest</span></a></li><li class="toc-level-2"><a href="#the-workshop-today"><span class="toc-number" aria-hidden="true">2</span><span>The workshop today</span></a></li><li class="toc-level-2"><a href="#build-a-case-with-an-answer-we-can-check"><span class="toc-number" aria-hidden="true">3</span><span>Build a case with an answer we can check</span></a></li><li class="toc-level-2"><a href="#more-than-a-change-of-names"><span class="toc-number" aria-hidden="true">4</span><span>More than a change of names</span></a></li><li class="toc-level-2"><a href="#make-the-clues-worth-following"><span class="toc-number" aria-hidden="true">5</span><span>Make the clues worth following</span></a></li><li class="toc-level-2"><a href="#a-closer-look-at-the-treasure-hunt"><span class="toc-number" aria-hidden="true">6</span><span>A closer look at the Treasure Hunt</span></a></li><li class="toc-level-2"><a href="#use-the-workshop"><span class="toc-number" aria-hidden="true">7</span><span>Use the workshop</span></a></li></ol></nav></details>
