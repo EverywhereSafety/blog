@@ -10,7 +10,7 @@ That is what we are building with **Murdoku Lab**. It generates detective puzzle
 
 [Play a case](https://everywheresafety.github.io/murdoku/play/) · [GitHub](https://github.com/EverywhereSafety/murdoku-lab) · [Queries and rollouts](https://huggingface.co/datasets/EverywhereSafety/murdoku-lab)
 
-[![The playable Murdoku Lab casebook, with a board, characters and clues](assets/play-preview.png)](https://everywheresafety.github.io/murdoku/play/)
+[![The current Murdoku player: an illustrated museum board, suspect portraits and linked clues](assets/play-preview.png)](https://everywheresafety.github.io/murdoku/play/)
 
 ## How we solved the contest
 
@@ -19,6 +19,22 @@ The Treasure Hunt has a 24×24 island, 23 people and a hidden treasure. Ships, c
 Our [Murdoku Detective 4B](https://huggingface.co/EverywhereSafety/murdoku-detective-4b), trained on generated Murdoku puzzles, read the PDF, transcribed the map and clues, and wrote an OR-Tools CP-SAT program to solve the puzzle.
 
 The puzzle also gave us a useful example to study. Our deduction trace makes progress well before the first exact placement. Later, ten characters become located within fourteen deduction events. Those are things we want to look for in the puzzles we generate too. The detailed contest analysis is folded away below for readers avoiding spoilers.
+
+## The workshop today
+
+The player now has eight illustrated settings: a manor, ocean liner, museum,
+theatre, chalet, glasshouses, night train and college. Rooms, furniture, wall
+finishes and board frames change with the setting.
+
+[![Eight illustrated worlds in Murdoku Play](assets/play-exp-settings.jpg)](https://everywheresafety.github.io/murdoku/play/#collection)
+
+The generated collection has 6×6, 7×7 and 8×8 cases. A guided training case teaches
+the rules, graded hints help when you get stuck, and a daily case gives everyone
+a shared mystery. The classic 16×16 estate and 24×24 museum are there for a longer
+investigation.
+
+[Start with the guided case](https://everywheresafety.github.io/murdoku/play/?case=tutorial)
+or [browse the collection](https://everywheresafety.github.io/murdoku/play/#collection).
 
 ## Build a case with an answer we can check
 
