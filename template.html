@@ -69,6 +69,32 @@ footer p { font-family: var(--sans); font-size: 13px; }
   .article-figure { width: calc(100vw - 32px); margin-top: 28px; }
   .article-body details { padding: 18px; }
 }
+.article-layout { width: min(1280px, calc(100% - 64px)); margin: 0 auto; display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 56px; align-items: start; }
+.article-layout .article-body { width: min(704px, 100%); min-width: 0; }
+.contents-sidebar { position: sticky; top: 28px; padding: 30px 24px 8px 0; border-right: 1px solid var(--line); max-height: calc(100vh - 56px); overflow-y: auto; }
+.contents-sidebar h2 { margin: 0 0 20px; font-family: var(--sans); font-size: 17px; font-weight: 600; }
+.contents-sidebar nav, .mobile-contents nav { display: block; }
+.toc-list { list-style: none; margin: 0; padding: 0; }
+.toc-list li { margin: 0 0 13px; }
+.toc-list a { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; color: var(--soft); font-size: 13px; line-height: 1.5; text-decoration: none; }
+.toc-list .toc-number { color: var(--muted); font-variant-numeric: tabular-nums; }
+.toc-list .toc-level-3 { padding-left: 15px; }
+.toc-list .toc-level-3 a { grid-template-columns: 30px minmax(0, 1fr); font-weight: 400; }
+.toc-list a:hover, .toc-list a[aria-current="location"] { color: var(--accent); }
+.toc-list a[aria-current="location"] { font-weight: 600; }
+.toc-list a[aria-current="location"] .toc-number { color: var(--accent); }
+.mobile-contents { display: none; }
+@media (min-width: 1200px) {
+  .article-heading > * { transform: translateX(144px); }
+  .article-figure { width: min(940px, calc(100vw - 400px)); }
+}
+@media (max-width: 1199px) {
+  .article-layout { display: block; width: 100%; }
+  .article-layout .article-body { width: min(704px, calc(100% - 48px)); }
+  .contents-sidebar { display: none; }
+  .article-body .mobile-contents { display: block; margin: 0 0 28px; padding: 15px 18px; }
+  .mobile-contents .toc-list { margin-top: 18px; }
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
@@ -84,8 +110,14 @@ footer p { font-family: var(--sans); font-size: 13px; }
       <h1 id="article-title">{{TITLE}}</h1>
       {{SUBTITLE}}
     </header>
+    <div class="article-layout">
+    <aside class="contents-sidebar" aria-labelledby="contents-title">
+      <h2 id="contents-title">Contents</h2>
+      <nav aria-label="Article contents">{{CONTENTS}}</nav>
+    </aside>
     <div class="article-body">
       <div class="article-meta"><a href="https://everywheresafety.github.io/">Everywhere Safety</a><span>{{READING_MINUTES}} min read</span></div>
+      <details class="mobile-contents"><summary>Contents</summary><nav aria-label="Article contents on smaller screens">{{CONTENTS}}</nav></details>
       {{CONTENT}}
       <nav class="article-resources" aria-label="Explore Murdoku and Agent Horizon">
         <p class="eyebrow">Explore the workshop</p>
@@ -99,7 +131,41 @@ footer p { font-family: var(--sans); font-size: 13px; }
         </div>
       </nav>
     </div>
+    </div>
   </article>
 </main>
 <footer><a class="brand" href="https://everywheresafety.github.io/">Everywhere Safety<span>.</span></a><p>Puzzles, worlds and agents.</p></footer>
+<script>
+(() => {
+  const links = [...document.querySelectorAll('.toc-list a')];
+  const headings = [...document.querySelectorAll('.article-body h2[id], .article-body h3[id]')];
+  let scheduled = false;
+  function updateContents() {
+    scheduled = false;
+    let active = null;
+    for (const heading of headings) {
+      if (heading.getClientRects().length && heading.getBoundingClientRect().top <= 160) active = heading.id;
+    }
+    for (const link of links) {
+      if (link.hash === '#' + active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  }
+  function scheduleUpdate() {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(updateContents); }
+  }
+  for (const link of links) link.addEventListener('click', () => {
+    const heading = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    const spoiler = heading?.closest('details');
+    if (spoiler) spoiler.open = true;
+    const mobileMenu = link.closest('.mobile-contents');
+    if (mobileMenu) mobileMenu.open = false;
+    scheduleUpdate();
+  });
+  addEventListener('scroll', scheduleUpdate, { passive: true });
+  addEventListener('resize', scheduleUpdate);
+  document.addEventListener('toggle', scheduleUpdate, true);
+  updateContents();
+})();
+</script>
 </body></html>

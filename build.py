@@ -51,6 +51,24 @@ def main():
             "inLanguage": "en",
         }
         content = markdown.markdown(text, extensions=["extra", "toc"])
+        toc_entries = []
+        section_number = 0
+        subsection_number = 0
+        for heading in re.finditer(r'<h([23]) id="([^"]+)">(.*?)</h\1>', content):
+            level, section_id, label = heading.groups()
+            if level == "2":
+                section_number += 1
+                subsection_number = 0
+                number = str(section_number)
+            else:
+                subsection_number += 1
+                number = f"{section_number}.{subsection_number}"
+            label = html.escape(html.unescape(re.sub(r"<[^>]+>", "", label)))
+            toc_entries.append(
+                f'<li class="toc-level-{level}"><a href="#{html.escape(section_id, quote=True)}">'
+                f'<span class="toc-number" aria-hidden="true">{number}</span><span>{label}</span></a></li>'
+            )
+        toc = '<ol class="toc-list">' + "".join(toc_entries) + "</ol>"
         # The title and subtitle belong to the article header, outside the prose.
         content = re.sub(r"^<h1\b[^>]*>.*?</h1>\s*", "", content, count=1)
         subtitle_match = re.match(r'<p class="article-subtitle">.*?</p>', content)
@@ -81,6 +99,7 @@ def main():
             .replace("{{IMAGE}}", html.escape(image, quote=True))
             .replace("{{SUBTITLE}}", subtitle)
             .replace("{{READING_MINUTES}}", str(reading_minutes))
+            .replace("{{CONTENTS}}", toc)
             .replace(
                 "{{STRUCTURED_DATA}}", json.dumps(structured).replace("<", "\\u003c")
             )
